@@ -15,6 +15,10 @@
 		1140159620DB9B9300F66CCC /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140159520DB9B9300F66CCC /* Storage.swift */; };
 		1140159920DBA05B00F66CCC /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140159820DBA05B00F66CCC /* Configuration.swift */; };
 		1140159B20DBA1A600F66CCC /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140159A20DBA1A600F66CCC /* LocationHelper.swift */; };
+		1140159D20DBAE6C00F66CCC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140159C20DBAE6C00F66CCC /* NetworkManager.swift */; };
+		1140159F20DBAEBC00F66CCC /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140159E20DBAEBC00F66CCC /* NetworkResponse.swift */; };
+		114015A120DBAF0500F66CCC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114015A020DBAF0500F66CCC /* NetworkError.swift */; };
+		114015A320DBAF4300F66CCC /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114015A220DBAF4300F66CCC /* RequestBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		1140159520DB9B9300F66CCC /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		1140159820DBA05B00F66CCC /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		1140159A20DBA1A600F66CCC /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		1140159C20DBAE6C00F66CCC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1140159E20DBAEBC00F66CCC /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		114015A020DBAF0500F66CCC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		114015A220DBAF4300F66CCC /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 			children = (
 				1140159720DBA03C00F66CCC /* Utility */,
 				1140159420DB9B6C00F66CCC /* UI */,
+				114015A420DBF1CF00F66CCC /* Networking */,
 				1140158220DB9B3800F66CCC /* AppDelegate.swift */,
 				1140158620DB9B3800F66CCC /* Main.storyboard */,
 				1140158920DB9B3900F66CCC /* Assets.xcassets */,
@@ -87,6 +96,17 @@
 				1140159A20DBA1A600F66CCC /* LocationHelper.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		114015A420DBF1CF00F66CCC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1140159C20DBAE6C00F66CCC /* NetworkManager.swift */,
+				1140159E20DBAEBC00F66CCC /* NetworkResponse.swift */,
+				114015A020DBAF0500F66CCC /* NetworkError.swift */,
+				114015A220DBAF4300F66CCC /* RequestBuilder.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +180,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1140159D20DBAE6C00F66CCC /* NetworkManager.swift in Sources */,
+				114015A120DBAF0500F66CCC /* NetworkError.swift in Sources */,
 				1140158520DB9B3800F66CCC /* ViewController.swift in Sources */,
+				114015A320DBAF4300F66CCC /* RequestBuilder.swift in Sources */,
+				1140159F20DBAEBC00F66CCC /* NetworkResponse.swift in Sources */,
 				1140158320DB9B3800F66CCC /* AppDelegate.swift in Sources */,
 				1140159920DBA05B00F66CCC /* Configuration.swift in Sources */,
 				1140159620DB9B9300F66CCC /* Storage.swift in Sources */,

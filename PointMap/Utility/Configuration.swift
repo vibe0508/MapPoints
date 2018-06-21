@@ -9,6 +9,9 @@
 import Foundation
 
 struct Configuration {
+    struct Networking {
+        static let baseUrl = URL(string: "")!
+    }
     struct Map {
         static let defaultMapRadius: Double = 1
     }
