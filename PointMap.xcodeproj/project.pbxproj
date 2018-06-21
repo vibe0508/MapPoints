@@ -12,6 +12,9 @@
 		1140158820DB9B3800F66CCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1140158620DB9B3800F66CCC /* Main.storyboard */; };
 		1140158A20DB9B3900F66CCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1140158920DB9B3900F66CCC /* Assets.xcassets */; };
 		1140158D20DB9B3900F66CCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1140158B20DB9B3900F66CCC /* LaunchScreen.storyboard */; };
+		1140159620DB9B9300F66CCC /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140159520DB9B9300F66CCC /* Storage.swift */; };
+		1140159920DBA05B00F66CCC /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140159820DBA05B00F66CCC /* Configuration.swift */; };
+		1140159B20DBA1A600F66CCC /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140159A20DBA1A600F66CCC /* LocationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		1140158920DB9B3900F66CCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1140158C20DB9B3900F66CCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1140158E20DB9B3900F66CCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1140159520DB9B9300F66CCC /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		1140159820DBA05B00F66CCC /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		1140159A20DBA1A600F66CCC /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,33 @@
 		1140158120DB9B3800F66CCC /* PointMap */ = {
 			isa = PBXGroup;
 			children = (
+				1140159720DBA03C00F66CCC /* Utility */,
+				1140159420DB9B6C00F66CCC /* UI */,
 				1140158220DB9B3800F66CCC /* AppDelegate.swift */,
-				1140158420DB9B3800F66CCC /* ViewController.swift */,
 				1140158620DB9B3800F66CCC /* Main.storyboard */,
 				1140158920DB9B3900F66CCC /* Assets.xcassets */,
 				1140158B20DB9B3900F66CCC /* LaunchScreen.storyboard */,
 				1140158E20DB9B3900F66CCC /* Info.plist */,
+				1140159520DB9B9300F66CCC /* Storage.swift */,
 			);
 			path = PointMap;
+			sourceTree = "<group>";
+		};
+		1140159420DB9B6C00F66CCC /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1140158420DB9B3800F66CCC /* ViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		1140159720DBA03C00F66CCC /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				1140159820DBA05B00F66CCC /* Configuration.swift */,
+				1140159A20DBA1A600F66CCC /* LocationHelper.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +162,9 @@
 			files = (
 				1140158520DB9B3800F66CCC /* ViewController.swift in Sources */,
 				1140158320DB9B3800F66CCC /* AppDelegate.swift in Sources */,
+				1140159920DBA05B00F66CCC /* Configuration.swift in Sources */,
+				1140159620DB9B9300F66CCC /* Storage.swift in Sources */,
+				1140159B20DBA1A600F66CCC /* LocationHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
