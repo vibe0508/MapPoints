@@ -19,6 +19,11 @@
 		1140159F20DBAEBC00F66CCC /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1140159E20DBAEBC00F66CCC /* NetworkResponse.swift */; };
 		114015A120DBAF0500F66CCC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114015A020DBAF0500F66CCC /* NetworkError.swift */; };
 		114015A320DBAF4300F66CCC /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114015A220DBAF4300F66CCC /* RequestBuilder.swift */; };
+		114015A720DBF2C000F66CCC /* PointMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 114015A520DBF2C000F66CCC /* PointMap.xcdatamodeld */; };
+		114015A920DC04F000F66CCC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114015A820DC04F000F66CCC /* CoreDataStack.swift */; };
+		114015AB20DC11BE00F66CCC /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114015AA20DC11BE00F66CCC /* Point.swift */; };
+		114015AF20DC32D600F66CCC /* LoadedArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114015AE20DC32D500F66CCC /* LoadedArea.swift */; };
+		114015B220DC3A9B00F66CCC /* CLLocationCoordinate2D+Serialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114015B120DC3A9B00F66CCC /* CLLocationCoordinate2D+Serialize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		1140159E20DBAEBC00F66CCC /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
 		114015A020DBAF0500F66CCC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		114015A220DBAF4300F66CCC /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		114015A620DBF2C000F66CCC /* PointMap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PointMap.xcdatamodel; sourceTree = "<group>"; };
+		114015A820DC04F000F66CCC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		114015AA20DC11BE00F66CCC /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		114015AE20DC32D500F66CCC /* LoadedArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedArea.swift; sourceTree = "<group>"; };
+		114015B120DC3A9B00F66CCC /* CLLocationCoordinate2D+Serialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Serialize.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,7 @@
 				1140159420DB9B6C00F66CCC /* UI */,
 				114015A420DBF1CF00F66CCC /* Networking */,
 				1140158220DB9B3800F66CCC /* AppDelegate.swift */,
+				114015B020DC336800F66CCC /* Storage */,
 				1140158620DB9B3800F66CCC /* Main.storyboard */,
 				1140158920DB9B3900F66CCC /* Assets.xcassets */,
 				1140158B20DB9B3900F66CCC /* LaunchScreen.storyboard */,
@@ -93,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				1140159820DBA05B00F66CCC /* Configuration.swift */,
+				114015B120DC3A9B00F66CCC /* CLLocationCoordinate2D+Serialize.swift */,
 				1140159A20DBA1A600F66CCC /* LocationHelper.swift */,
 			);
 			path = Utility;
@@ -107,6 +119,17 @@
 				114015A220DBAF4300F66CCC /* RequestBuilder.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		114015B020DC336800F66CCC /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				114015A520DBF2C000F66CCC /* PointMap.xcdatamodeld */,
+				114015A820DC04F000F66CCC /* CoreDataStack.swift */,
+				114015AA20DC11BE00F66CCC /* Point.swift */,
+				114015AE20DC32D500F66CCC /* LoadedArea.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,12 +206,17 @@
 				1140159D20DBAE6C00F66CCC /* NetworkManager.swift in Sources */,
 				114015A120DBAF0500F66CCC /* NetworkError.swift in Sources */,
 				1140158520DB9B3800F66CCC /* ViewController.swift in Sources */,
+				114015A720DBF2C000F66CCC /* PointMap.xcdatamodeld in Sources */,
 				114015A320DBAF4300F66CCC /* RequestBuilder.swift in Sources */,
 				1140159F20DBAEBC00F66CCC /* NetworkResponse.swift in Sources */,
+				114015A920DC04F000F66CCC /* CoreDataStack.swift in Sources */,
 				1140158320DB9B3800F66CCC /* AppDelegate.swift in Sources */,
+				114015AB20DC11BE00F66CCC /* Point.swift in Sources */,
 				1140159920DBA05B00F66CCC /* Configuration.swift in Sources */,
 				1140159620DB9B9300F66CCC /* Storage.swift in Sources */,
 				1140159B20DBA1A600F66CCC /* LocationHelper.swift in Sources */,
+				114015B220DC3A9B00F66CCC /* CLLocationCoordinate2D+Serialize.swift in Sources */,
+				114015AF20DC32D600F66CCC /* LoadedArea.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +363,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3NRJ5W5TPS;
 				INFOPLIST_FILE = PointMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -353,6 +382,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3NRJ5W5TPS;
 				INFOPLIST_FILE = PointMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -386,6 +416,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		114015A520DBF2C000F66CCC /* PointMap.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				114015A620DBF2C000F66CCC /* PointMap.xcdatamodel */,
+			);
+			currentVersion = 114015A620DBF2C000F66CCC /* PointMap.xcdatamodel */;
+			path = PointMap.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1140157720DB9B3800F66CCC /* Project object */;
 }

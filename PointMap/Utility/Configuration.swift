@@ -15,4 +15,8 @@ struct Configuration {
     struct Map {
         static let defaultMapRadius: Double = 1
     }
+    struct Storage {
+        static let modelUrl = Bundle.main.url(forResource: "PointMap", withExtension: "momd")!
+        static let storeFilename = "PointMap.sqlite"
+    }
 }
