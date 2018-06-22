@@ -24,7 +24,8 @@ class NetworkManager {
                         success: @escaping CompletionHandler<Data>,
                         failure: @escaping ErrorHandler) {
         urlSession.dataTask(with: builder.request) { [weak self] (data, response, error) in
-            self?.processResponse(data: data, response: response, error: error,
+            let dat = builder.method == .head ? Data() : data
+            self?.processResponse(data: dat, response: response, error: error,
                                   success: success, failure: failure)
         }.resume()
     }

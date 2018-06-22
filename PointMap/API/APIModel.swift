@@ -21,7 +21,7 @@ struct APIModel {
         let externalId: String
         let partnerName: String?
     }
-    struct Partner {
+    struct Partner: Decodable {
         let id: String
         let picture: String
     }

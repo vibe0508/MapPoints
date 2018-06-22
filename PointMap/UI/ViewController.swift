@@ -18,6 +18,13 @@ class ViewController: UIViewController {
     private let annotationProvider = AnnotationProvider()
     private let locationManager = CLLocationManager()
     private let pointsLoader = PointsLoader()
+    private let imageLoader = ImageLoader()
+
+    private let imageAnnotationReuseId = "zxddc"
+    private let annotationReuseId = "zxc"
+
+    private var cachedImages: [String: UIImage] = [:]
+    private var loadingImages: [String: [Annotation]] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +43,25 @@ class ViewController: UIViewController {
         }
     }
 
-    private func setupMapView() {
-//        mapView
+    private func loadImage(for annotation: Annotation) {
+        guard let partnerId = annotation.partnerId else {
+            return
+        }
+        if let waitingList = loadingImages[partnerId] {
+            loadingImages[partnerId] = waitingList + [annotation]
+            return
+        }
+        loadingImages[partnerId] = []
+        imageLoader.loadImage(with: partnerId) { [weak self] image in
+            DispatchQueue.main.async {
+                self?.cachedImages[partnerId] = image
+                self?.loadingImages[partnerId]?.forEach {
+                    self?.mapView.removeAnnotation($0)
+                    self?.mapView.addAnnotation($0)
+                }
+                self?.loadingImages[partnerId] = nil
+            }
+        }
     }
 }
 
@@ -67,20 +91,49 @@ extension ViewController: MKMapViewDelegate {
         pointsLoader.loadPoints(at: mapView.centerCoordinate,
                                 radius: mapView.region.span.latitudeDelta * 55500)
     }
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if let image = cachedImages[(annotation as? Annotation)?.partnerId ?? ""] {
+            let view = mapView.dequeueReusableAnnotationView(withIdentifier: imageAnnotationReuseId)
+                ?? MKAnnotationView(annotation: annotation, reuseIdentifier: imageAnnotationReuseId)
+            view.image = image
+            return view
+        }
+        return nil
+
+    }
 }
 
 // Annotation consumer
 extension ViewController: AnnotationConsumer {
     func add(_ annotations: [Annotation]) {
         mapView.addAnnotations(annotations)
+
+        annotations.forEach {
+            if let partnerId = $0.partnerId, cachedImages[partnerId] == nil {
+                loadImage(for: $0)
+            }
+        }
     }
 
-    func remove(_ annotation: Annotation) {
+    func removeAnnotation(with id: String) {
+        guard let annotation = mapView.annotations
+            .first(where: { ($0 as? Annotation)?.id == id }) else {
+                return
+        }
         mapView.removeAnnotation(annotation)
     }
 
     func reload(_ annotation: Annotation) {
-//        mapView.
+        guard let oldAnnotation = mapView.annotations
+            .first(where: { ($0 as? Annotation)?.id == annotation.id }) else {
+                return
+        }
+        if let partnerId = annotation.partnerId, cachedImages[partnerId] == nil {
+            loadImage(for: annotation)
+        }
+        mapView.removeAnnotation(oldAnnotation)
+        mapView.addAnnotation(annotation)
     }
 }
 

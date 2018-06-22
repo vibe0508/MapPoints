@@ -9,16 +9,27 @@
 import MapKit
 
 class Annotation: NSObject, MKAnnotation {
+    let id: String
     let coordinate: CLLocationCoordinate2D
-    let imageName: String?
+    let partnerId: String?
 
-    init(coordinate: CLLocationCoordinate2D, imageName: String?) {
+    init(id: String, coordinate: CLLocationCoordinate2D, partnerId: String?) {
+        self.id = id
         self.coordinate = coordinate
-        self.imageName = imageName
+        self.partnerId = partnerId
         super.init()
     }
 
     override var hash: Int {
         return coordinate.latitude.hashValue ^ coordinate.longitude.hashValue
+    }
+}
+
+extension Annotation {
+    override var hashValue: Int {
+        return hash
+    }
+    static func ==(l: Annotation, r: Annotation) -> Bool {
+        return l.id == r.id
     }
 }

@@ -10,6 +10,8 @@ import Foundation
 import CoreData
 import CoreLocation
 
+private let lastLoadPartnersKey = "lastLoadPartnersKey"
+
 class CacheValidator {
 
     let locationHelper = LocationHelper()
@@ -29,6 +31,20 @@ class CacheValidator {
             newArea.dateLoaded = Date()
             try? self.managedObjectContext.save()
         }
+    }
+
+    func markLoadedPartners() {
+        UserDefaults.standard.set(Date().timeIntervalSince1970 as NSNumber,
+                                  forKey: lastLoadPartnersKey)
+        UserDefaults.standard.synchronize()
+    }
+
+    func validPartnersCacheExists() -> Bool {
+        guard let timeInterval = (UserDefaults.standard
+            .object(forKey: lastLoadPartnersKey) as? NSNumber)?.doubleValue else {
+                return false
+        }
+        return Date(timeIntervalSince1970: timeInterval).timeIntervalSinceNow > -Configuration.Policies.allowedCacheAge
     }
 
     private func getValidAreas(for coordinate: CLLocationCoordinate2D, with radius: Double) -> [LoadedArea] {

@@ -18,7 +18,7 @@ struct Configuration {
 
     struct Networking {
         static let apiBaseUrl = URL(string: "https://api.tinkoff.ru/v1/")!
-        static let contentBaseUrl = URL(string: "")!
+        static let contentBaseUrl = URL(string: "https://static.tinkoff.ru/icons/deposition-partners-v3/xhdpi/")!
     }
     struct Map {
         static let defaultMapRadius: Double = 1000

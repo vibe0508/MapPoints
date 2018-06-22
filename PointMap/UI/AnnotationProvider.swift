@@ -11,7 +11,7 @@ import CoreData
 
 protocol AnnotationConsumer: class {
     func add(_ annotations: [Annotation])
-    func remove(_ annotation: Annotation)
+    func removeAnnotation(with id: String)
     func reload(_ annotation: Annotation)
 }
 
@@ -25,12 +25,12 @@ class AnnotationProvider: NSObject {
     func start() {
         try? frc.performFetch()
         consumer?.add(frc.fetchedObjects?.compactMap { point in
-            guard let coordinate = point.coordinate else {
+            guard let coordinate = point.coordinate, let id = point.id else {
                 return nil
             }
 
-            return Annotation(coordinate: coordinate,
-                              imageName: point.logo?.filename)
+            return Annotation(id: id, coordinate: coordinate,
+                              partnerId: point.logo?.partnerId)
         } ?? [])
     }
 
@@ -52,12 +52,14 @@ extension AnnotationProvider: NSFetchedResultsControllerDelegate {
                     didChange anObject: Any, at indexPath: IndexPath?,
                     for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         guard let point = anObject as? Point,
-            let coordinate = point.coordinate, type != .move else {
+            let coordinate = point.coordinate,
+            let id = point.id,
+            type != .move else {
             return
         }
 
-        let annotation = Annotation(coordinate: coordinate,
-                                    imageName: point.logo?.filename)
+        let annotation = Annotation(id: id, coordinate: coordinate,
+                                    partnerId: point.partnerId)
 
         switch type {
         case .insert:
@@ -65,7 +67,7 @@ extension AnnotationProvider: NSFetchedResultsControllerDelegate {
         case .update:
             consumer?.reload(annotation)
         case .delete:
-            consumer?.remove(annotation)
+            consumer?.removeAnnotation(with: id)
         default:
             break
         }
