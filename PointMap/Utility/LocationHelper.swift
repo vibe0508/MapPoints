@@ -13,10 +13,10 @@ import MapKit
 class LocationHelper {
 
     private struct Constants {
-        static let equatorLength = 40075.0
+        static let equatorLength = 40075.0 * 1000
     }
 
-    //takes radius in km, assuming Earth is a sphere
+    //takes radius in m, assuming Earth is a sphere
     func span(for radius: Double, at point: CLLocationCoordinate2D) -> MKCoordinateSpan {
         let latRad = point.latitude * .pi / 180
 

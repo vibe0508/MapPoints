@@ -23,9 +23,6 @@ protocol RequestBuilder {
 }
 
 extension RequestBuilder {
-    var baseUrl: URL {
-        return Configuration.Networking.baseUrl
-    }
     var method: HTTPMethod {
         return .get
     }

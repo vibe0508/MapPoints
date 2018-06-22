@@ -9,10 +9,11 @@
 import CoreData
 import CoreLocation
 
-class Point: NSManagedObject {
+public class Point: NSManagedObject {
 
     @NSManaged var id: String?
     @NSManaged var partnerId: String?
+    @NSManaged var logo: PartnerLogo?
     @NSManaged private var t_coordinate: Data?
 
     var coordinate: CLLocationCoordinate2D? {

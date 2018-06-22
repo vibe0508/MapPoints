@@ -24,6 +24,13 @@
 		114015AB20DC11BE00F66CCC /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114015AA20DC11BE00F66CCC /* Point.swift */; };
 		114015AF20DC32D600F66CCC /* LoadedArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114015AE20DC32D500F66CCC /* LoadedArea.swift */; };
 		114015B220DC3A9B00F66CCC /* CLLocationCoordinate2D+Serialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114015B120DC3A9B00F66CCC /* CLLocationCoordinate2D+Serialize.swift */; };
+		114015B820DC3E1800F66CCC /* AnnotationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114015B720DC3E1800F66CCC /* AnnotationProvider.swift */; };
+		114015BA20DC3F3D00F66CCC /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114015B920DC3F3D00F66CCC /* Annotation.swift */; };
+		114015BE20DC42E000F66CCC /* PointsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114015BD20DC42E000F66CCC /* PointsLoader.swift */; };
+		114015C020DC435F00F66CCC /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114015BF20DC435F00F66CCC /* APIRouter.swift */; };
+		114015C220DC4DDF00F66CCC /* CacheValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114015C120DC4DDF00F66CCC /* CacheValidator.swift */; };
+		114015C820DC5E7D00F66CCC /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114015C720DC5E7D00F66CCC /* APIModel.swift */; };
+		114015CA20DC646400F66CCC /* PointsSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114015C920DC646300F66CCC /* PointsSyncer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +53,13 @@
 		114015AA20DC11BE00F66CCC /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		114015AE20DC32D500F66CCC /* LoadedArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadedArea.swift; sourceTree = "<group>"; };
 		114015B120DC3A9B00F66CCC /* CLLocationCoordinate2D+Serialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Serialize.swift"; sourceTree = "<group>"; };
+		114015B720DC3E1800F66CCC /* AnnotationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationProvider.swift; sourceTree = "<group>"; };
+		114015B920DC3F3D00F66CCC /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		114015BD20DC42E000F66CCC /* PointsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsLoader.swift; sourceTree = "<group>"; };
+		114015BF20DC435F00F66CCC /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		114015C120DC4DDF00F66CCC /* CacheValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheValidator.swift; sourceTree = "<group>"; };
+		114015C720DC5E7D00F66CCC /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
+		114015C920DC646300F66CCC /* PointsSyncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsSyncer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +92,13 @@
 		1140158120DB9B3800F66CCC /* PointMap */ = {
 			isa = PBXGroup;
 			children = (
+				1140158220DB9B3800F66CCC /* AppDelegate.swift */,
 				1140159720DBA03C00F66CCC /* Utility */,
 				1140159420DB9B6C00F66CCC /* UI */,
 				114015A420DBF1CF00F66CCC /* Networking */,
-				1140158220DB9B3800F66CCC /* AppDelegate.swift */,
 				114015B020DC336800F66CCC /* Storage */,
+				114015CB20DC7CA100F66CCC /* Logic */,
+				114015CD20DC7CCE00F66CCC /* API */,
 				1140158620DB9B3800F66CCC /* Main.storyboard */,
 				1140158920DB9B3900F66CCC /* Assets.xcassets */,
 				1140158B20DB9B3900F66CCC /* LaunchScreen.storyboard */,
@@ -96,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				1140158420DB9B3800F66CCC /* ViewController.swift */,
+				114015B720DC3E1800F66CCC /* AnnotationProvider.swift */,
+				114015B920DC3F3D00F66CCC /* Annotation.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -130,6 +148,25 @@
 				114015AE20DC32D500F66CCC /* LoadedArea.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		114015CB20DC7CA100F66CCC /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				114015BD20DC42E000F66CCC /* PointsLoader.swift */,
+				114015C120DC4DDF00F66CCC /* CacheValidator.swift */,
+				114015C920DC646300F66CCC /* PointsSyncer.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		114015CD20DC7CCE00F66CCC /* API */ = {
+			isa = PBXGroup;
+			children = (
+				114015BF20DC435F00F66CCC /* APIRouter.swift */,
+				114015C720DC5E7D00F66CCC /* APIModel.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,18 +241,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				1140159D20DBAE6C00F66CCC /* NetworkManager.swift in Sources */,
+				114015C020DC435F00F66CCC /* APIRouter.swift in Sources */,
 				114015A120DBAF0500F66CCC /* NetworkError.swift in Sources */,
 				1140158520DB9B3800F66CCC /* ViewController.swift in Sources */,
+				114015C820DC5E7D00F66CCC /* APIModel.swift in Sources */,
+				114015BE20DC42E000F66CCC /* PointsLoader.swift in Sources */,
 				114015A720DBF2C000F66CCC /* PointMap.xcdatamodeld in Sources */,
+				114015CA20DC646400F66CCC /* PointsSyncer.swift in Sources */,
 				114015A320DBAF4300F66CCC /* RequestBuilder.swift in Sources */,
+				114015C220DC4DDF00F66CCC /* CacheValidator.swift in Sources */,
 				1140159F20DBAEBC00F66CCC /* NetworkResponse.swift in Sources */,
 				114015A920DC04F000F66CCC /* CoreDataStack.swift in Sources */,
 				1140158320DB9B3800F66CCC /* AppDelegate.swift in Sources */,
+				114015B820DC3E1800F66CCC /* AnnotationProvider.swift in Sources */,
 				114015AB20DC11BE00F66CCC /* Point.swift in Sources */,
 				1140159920DBA05B00F66CCC /* Configuration.swift in Sources */,
 				1140159620DB9B9300F66CCC /* Storage.swift in Sources */,
 				1140159B20DBA1A600F66CCC /* LocationHelper.swift in Sources */,
 				114015B220DC3A9B00F66CCC /* CLLocationCoordinate2D+Serialize.swift in Sources */,
+				114015BA20DC3F3D00F66CCC /* Annotation.swift in Sources */,
 				114015AF20DC32D600F66CCC /* LoadedArea.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

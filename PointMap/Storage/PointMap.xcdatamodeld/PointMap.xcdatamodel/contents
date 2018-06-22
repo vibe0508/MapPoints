@@ -9,15 +9,17 @@
         <attribute name="dateLoaded" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="partnerId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="points" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Point" inverseName="logo" inverseEntity="Point" syncable="YES"/>
     </entity>
     <entity name="Point" representedClassName=".Point" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" defaultValueString="no-id" syncable="YES"/>
         <attribute name="partnerId" optional="YES" attributeType="String" defaultValueString=" " syncable="YES"/>
         <attribute name="t_coordinate" optional="YES" attributeType="Binary" customClassName=".CoordinateWrapper" syncable="YES"/>
+        <relationship name="logo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PartnerLogo" inverseName="points" inverseEntity="PartnerLogo" syncable="YES"/>
     </entity>
     <elements>
         <element name="LoadedArea" positionX="-36" positionY="9" width="128" height="90"/>
-        <element name="PartnerLogo" positionX="-54" positionY="-9" width="128" height="90"/>
-        <element name="Point" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="PartnerLogo" positionX="-54" positionY="-9" width="128" height="105"/>
+        <element name="Point" positionX="-63" positionY="-18" width="128" height="105"/>
     </elements>
 </model>
