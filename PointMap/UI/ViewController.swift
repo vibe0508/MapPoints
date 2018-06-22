@@ -69,11 +69,17 @@ class ViewController: UIViewController {
 
 extension ViewController {
     @IBAction private func onPlusButton() {
-
+        var region = mapView.region
+        region.span.latitudeDelta /= Configuration.Map.zoomStep
+        region.span.longitudeDelta /= Configuration.Map.zoomStep
+        mapView.setRegion(region, animated: true)
     }
 
     @IBAction private func onMinusButton() {
-
+        var region = mapView.region
+        region.span.latitudeDelta *= Configuration.Map.zoomStep
+        region.span.longitudeDelta *= Configuration.Map.zoomStep
+        mapView.setRegion(region, animated: true)
     }
 
     @IBAction private func onLocButton() {

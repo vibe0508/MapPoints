@@ -22,6 +22,7 @@ struct Configuration {
     }
     struct Map {
         static let defaultMapRadius: Double = 1000
+        static let zoomStep = 1.4
     }
     struct Storage {
         static let modelUrl = Bundle.main.url(forResource: "PointMap", withExtension: "momd")!
